@@ -1,6 +1,9 @@
 package application;
 
+import model.dao.DaoFactory;
+import model.dao.SellerDao;
 import model.entities.Department;
+import model.entities.Seller;
 
 public class Program {
 
@@ -8,6 +11,11 @@ public class Program {
 		
 		Department obj= new Department(8, "Book");
 		
+		SellerDao sellerDao=DaoFactory.createSellerDao();
+		
+		Seller seller= sellerDao.findById(3);
+		
+		System.out.println(seller);
 		
 
 	}
