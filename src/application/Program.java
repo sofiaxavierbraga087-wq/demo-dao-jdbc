@@ -1,5 +1,6 @@
 package application;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ public class Program {
 
 	public static void main(String[] args) {
 		
-		Department obj= new Department(8, "Book");
+		Department obj= new Department(2, "Book");
 		
 		SellerDao sellerDao=DaoFactory.createSellerDao();
 		
@@ -28,6 +29,9 @@ public class Program {
 			System.out.println(sel);
 		}
 		
+		Seller newSeller= new Seller(null, "Greg", "greg@gmail.com", new Date(0), 4000.0, obj);
 	
+		sellerDao.insert(newSeller);
+		System.out.println(newSeller.getId());
 	}
 }
