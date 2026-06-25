@@ -1,5 +1,6 @@
 package application;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import model.dao.DaoFactory;
@@ -20,13 +21,13 @@ public class Program {
 		
 		System.out.println(seller);
 		
-		System.out.println("===TEST 2:seller findByDepartment===");
-		Department department= new Department(2, null);
-		List<Seller> list=sellerDao.findByDepartment(department);
-
-		for(Seller sell:list) {
-			System.out.println(sell);
+		List<Seller>list=new ArrayList<>();
+		
+		list=sellerDao.findAll();
+		for(Seller sel:list) {
+			System.out.println(sel);
 		}
+		
+	
 	}
-
 }
